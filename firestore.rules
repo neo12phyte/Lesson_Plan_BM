@@ -1,7 +1,7 @@
 rules_version = '2';
 service cloud.firestore {
  match /databases/{database}/documents {
-  function teacher() { return request.auth != null && request.auth.uid == 'REPLACE_WITH_TEACHER_UID'; }
+  function teacher() { return request.auth != null && request.auth.uid == '4An1krFPGkcQkoCylVvQyZ2oav52'; }
   match /courses/business-management {
    allow read: if teacher();
    allow create, update: if teacher() && request.resource.data.keys().hasOnly(['version','lessonIds','updatedAt']) && request.resource.data.version is string && request.resource.data.lessonIds is list && request.resource.data.lessonIds.size() <= 100 && request.resource.data.updatedAt == request.time;
