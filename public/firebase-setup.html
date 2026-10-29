@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BM Lesson Studio · Teacher setup</title>
-<style>body{background:#10141c;color:#eef2ff;font:18px/1.6 system-ui;margin:0;padding:8vh 24px}main{max-width:620px;margin:auto;background:#1b2230;border:1px solid #344155;padding:32px;border-radius:24px}h1{line-height:1.2}button{background:#a5f3c5;color:#10251a;border:0;border-radius:12px;padding:14px 22px;font:inherit;cursor:pointer}button:disabled{opacity:.5}input{width:100%;box-sizing:border-box;background:#10141c;color:#fff;border:1px solid #64748b;border-radius:8px;padding:12px;font:16px monospace}#status{overflow-wrap:anywhere}label{display:block;margin:20px 0 8px}</style></head>
-<body><main><small>BM LESSON STUDIO</small><h1>Connect your teacher account</h1><p>Sign in with the Google account you want to use to edit your lessons.</p><button id="login" disabled>Loading sign-in…</button><p id="status" role="status"></p><section id="result" hidden><p id="account"></p><label for="uid">Your Firebase User UID</label><input id="uid" readonly><p>Copy this UID and send it in our chat to complete teacher access setup.</p></section></main>
+<style>body{background:#10141c;color:#eef2ff;font:18px/1.6 system-ui;margin:0;padding:8vh 24px}main{max-width:620px;margin:auto;background:#1b2230;border:1px solid #344155;padding:32px;border-radius:24px}h1{line-height:1.2}button,.studio-link{background:#a5f3c5;color:#10251a;border:0;border-radius:12px;padding:14px 22px;font:inherit;cursor:pointer}.studio-link{display:inline-block;text-decoration:none;margin-top:16px}button:disabled{opacity:.5}input{width:100%;box-sizing:border-box;background:#10141c;color:#fff;border:1px solid #64748b;border-radius:8px;padding:12px;font:16px monospace}#status{overflow-wrap:anywhere}label{display:block;margin:20px 0 8px}</style></head>
+<body><main><small>BM LESSON STUDIO</small><h1>Connect your teacher account</h1><p>Sign in with the Google account you want to use to edit your lessons.</p><button id="login" disabled>Loading sign-in…</button><p id="status" role="status"></p><section id="result" hidden><p id="account"></p><label for="uid">Your Firebase User UID</label><input id="uid" readonly><p>Copy this UID and send it in our chat to complete teacher access setup.</p></section><p><a class="studio-link" href="./">Open Lesson Studio →</a></p><p>This page only shows your account ID. If your account is already approved, open Lesson Studio to access your lessons.</p></main>
 <script type="module">
 const button=document.getElementById('login'), status=document.getElementById('status');
 try {
@@ -18,7 +18,7 @@ try {
  document.getElementById('uid').value=user.uid;
  document.getElementById('account').textContent='Signed in as '+(user.email||user.displayName||'your Google account');
  document.getElementById('result').hidden=false;
- status.textContent='Sign-in successful. Teacher access still needs to be configured.';
+ status.textContent='Sign-in successful. If this account is already approved, click Open Lesson Studio below.';
  }catch(error){status.textContent=(error.code||'Sign-in failed')+': '+error.message;}
  finally{button.disabled=false;button.textContent='Choose Google account';}
  };
