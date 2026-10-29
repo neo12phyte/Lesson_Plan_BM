@@ -1,0 +1,12 @@
+{
+  "firebase": {
+    "apiKey": "AIzaSyBzVEo9AvU50mxB1IwT_eJuTiOsC5mk124",
+    "authDomain": "bm-lesson-plan.firebaseapp.com",
+    "projectId": "bm-lesson-plan",
+    "storageBucket": "bm-lesson-plan.firebasestorage.app",
+    "messagingSenderId": "909962020540",
+    "appId": "1:909962020540:web:a62971238cc3d8169832b9",
+    "measurementId": "G-LGMVMSF3QH"
+  },
+  "teacherUid": "4An1krFPGkcQkoCylVvQyZ2oav52"
+}
